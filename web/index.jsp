@@ -11,6 +11,12 @@
     <title>$Title$</title>
   </head>
   <body>
-  <h3>MBTI职业性格测试系统</h3>
+    <h3>MBTI职业性格测试系统</h3>
+<%--    登录表单--%>
+    <form action="users?opr=login" method="post">
+      用户名:<input name="login"/> <br/>
+      密码：<input type="password" name="passwd"/>
+      <input type="submit"/>
+    </form>
   </body>
 </html>

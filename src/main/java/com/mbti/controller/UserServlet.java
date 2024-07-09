@@ -25,15 +25,24 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+            //获取操作类型，根据不同操作进行处理
+            String opr=req.getParameter("opr");
+            if(opr.equals("login")){
+                //获取登录名、密码，判断是否匹配
+                String login=req.getParameter("login");
+                String passwd=req.getParameter("passwd");
+                //调用业务逻辑层进行身份验证
+                if(login.equals("admin")&&passwd.equals("123456")){
+                    //把用户存在session对象中
+                    req.getSession().setAttribute("login",login);
+                    //登录成功，跳转到主页面
+                    req.getRequestDispatcher("WEB-INF/pages/main.jsp").forward(req,resp);
 
-        //System.out.println("usrServlet");
-//        Users users=new Users();
-//        users.setId(1);
-//        users.setLogin("admin122");
-//        users.setName("管理员");
-        //调用业务逻辑层Service进行逻辑处理
-        Users users=userService.getUserById(1);
-        resp.getWriter().print(users.getLogin());//服务器传递数据到客户端
+                }else {
+                    //重新登录,重定向
+                    resp.sendRedirect("index.jsp");
+                }
+            }
     }
 
     @Override
