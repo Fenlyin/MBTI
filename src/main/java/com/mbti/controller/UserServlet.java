@@ -35,13 +35,13 @@ public class UserServlet extends HttpServlet {
                 Users users=userService.getLoginUser(login,passwd);
                 if(users!=null){
                     //把用户存在session对象中
-                    req.getSession().setAttribute("login",login);
+                    req.getSession().setAttribute("current_user",users);
                     //登录成功，跳转到主页面
                     req.getRequestDispatcher("WEB-INF/pages/main.jsp").forward(req,resp);
 
                 }else {
                     //重新登录,重定向
-                    resp.sendRedirect("index.jsp");
+                    resp.sendRedirect("login.jsp");
                 }
             }else if(opr.equals("logout")){//退出登录
                 //移除session存储的数据
@@ -49,7 +49,7 @@ public class UserServlet extends HttpServlet {
                 //设置session为无效
                 req.getSession().invalidate();
                 //打开登录页面
-                req.getRequestDispatcher("index.jsp").forward(req,resp);
+                req.getRequestDispatcher("login.jsp").forward(req,resp);
             }
     }
 
