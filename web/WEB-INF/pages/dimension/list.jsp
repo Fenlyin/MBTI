@@ -37,7 +37,7 @@
 					<td>${p.title }</td>
 					<td>${p.depict }</td>
 
-					<td><a class="button" href="${pageContext.request.contextPath }/dimension/view.action?id=${p.id }">查看</a>
+					<td><a class="button" href="${pageContext.request.contextPath }/dimension?opr=view&id=${p.id }">查看</a>
 						<a class="button" href="${pageContext.request.contextPath }/dimension/edit.action?id=${p.id }">修改</a> <a
 						class="button" href="${pageContext.request.contextPath }/dimension/view.action?id=${p.id }&delete=1">删除</a>
 					</td>

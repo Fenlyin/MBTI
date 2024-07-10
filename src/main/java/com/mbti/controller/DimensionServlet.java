@@ -34,6 +34,14 @@ public class DimensionServlet extends HttpServlet {
             req.setAttribute("dimensionList",dimensionList);
             req.setAttribute("assessmentList",assessmentTypeList);
             req.getRequestDispatcher("WEB-INF/pages/dimension/list.jsp").forward(req,resp);
+        } else if ("view".equals(opr)) {//查看相关性格维度信息
+            //获取性格的id
+            String idStr=req.getParameter("id");
+            //根据前端页面传过来id获取对应性格维度对象的信息
+            PersonalityDimension p=dimensionService.getPdById(Integer.valueOf(idStr));
+            req.setAttribute("dimension",p);
+            //打开view.jsp
+            req.getRequestDispatcher("WEB-INF/pages/dimension/view.jsp").forward(req,resp);
         }
     }
 

@@ -4,6 +4,8 @@
 <html>
 <head>
 <script type="text/javascript" src="${pageContext.request.contextPath }/css/commonCss.js"></script>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/table.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/res/styles.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/input.css" />
@@ -12,7 +14,7 @@
 <body>
   <div style="padding: 10px;">
     <%@ include file="/inc/msg.jsp"%>
-    <a href="${pageContext.request.contextPath }/dimension/list.action?id=${dimension.assessmentId }" class="button"><button class="btn btn-warning" style="margin-bottom: 10px">返回列表</button></a>
+    <a href="${pageContext.request.contextPath }/dimension?opr=list&id=${dimension.assessmentId }" class="button"><button class="btn btn-warning" style="margin-bottom: 10px">返回列表</button></a>
     <table class="table table-bordered table-hover table-striped" style="width: 90%;">
       <tr>
         <td class="head">性格维度名称:</td>

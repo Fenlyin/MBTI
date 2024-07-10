@@ -43,4 +43,46 @@ public class DimensionDaoImpl implements DimensionDao {
         }
         return dimensionList;
     }
+
+    @Override
+    public PersonalityDimension getPdById(int id) {
+        PersonalityDimension p=null;
+        //进行数据库查询操作
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            //获取连接
+            connection= DBUtil.getConnection();
+
+            //4、获取Statement对象
+            String sql = "SELECT * FROM personality_dimension where id=?";
+
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+
+            //5、执行查询操作
+
+            resultSet = statement.executeQuery();
+
+            //6、处理结果，创建用户对象，属性赋值
+
+            if (resultSet.next()) {
+                p = new PersonalityDimension();
+                int uid = resultSet.getInt("id");//获取到字段id对应的值
+                String title=resultSet.getString("title");
+                String depict=resultSet.getString("depict");
+                p.setId(uid);
+                p.setTitle(title);
+                p.setDepict(depict);
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            //7、关闭资源
+            DBUtil.close(connection,statement,resultSet);
+        }
+        return p;
+    }
 }
