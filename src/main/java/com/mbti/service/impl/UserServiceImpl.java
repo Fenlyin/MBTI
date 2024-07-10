@@ -15,4 +15,10 @@ public class UserServiceImpl implements UserService {
         Users users=userDao.getUserById(id);
         return users;
     }
+
+    @Override
+    public Users getLoginUser(String login, String passwd) {
+        //调用数据访问层进行身份验证的方法
+        return userDao.getLoginUser(login,passwd);
+    }
 }

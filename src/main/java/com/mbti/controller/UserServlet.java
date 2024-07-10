@@ -29,10 +29,11 @@ public class UserServlet extends HttpServlet {
             String opr=req.getParameter("opr");
             if(opr.equals("login")){
                 //获取登录名、密码，判断是否匹配
-                String login=req.getParameter("login");
+                String login=req.getParameter("login");//获取前端请求提交的参数
                 String passwd=req.getParameter("passwd");
                 //调用业务逻辑层进行身份验证
-                if(login.equals("admin")&&passwd.equals("123456")){
+                Users users=userService.getLoginUser(login,passwd);
+                if(users!=null){
                     //把用户存在session对象中
                     req.getSession().setAttribute("login",login);
                     //登录成功，跳转到主页面
@@ -42,6 +43,13 @@ public class UserServlet extends HttpServlet {
                     //重新登录,重定向
                     resp.sendRedirect("index.jsp");
                 }
+            }else if(opr.equals("logout")){//退出登录
+                //移除session存储的数据
+                req.getSession().removeAttribute("login");
+                //设置session为无效
+                req.getSession().invalidate();
+                //打开登录页面
+                req.getRequestDispatcher("index.jsp").forward(req,resp);
             }
     }
 

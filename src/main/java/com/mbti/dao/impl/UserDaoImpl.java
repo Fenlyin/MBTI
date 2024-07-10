@@ -54,4 +54,38 @@ public class UserDaoImpl implements UserDao {
         }
         return users;
     }
+
+    @Override
+    public Users getLoginUser(String login, String passwd) {
+        //数据库相关操作
+        Users users=null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try{
+            connection=DBUtil.getConnection();
+            String sql="SELECT * FROM users WHERE login=? AND passwd=?";
+            statement=connection.prepareStatement(sql);
+            statement.setString(1,login);
+            statement.setString(2,passwd);
+            resultSet=statement.executeQuery();
+            if (resultSet.next()) {
+                users = new Users();
+                int uid = resultSet.getInt("id");//获取到字段id对应的值
+                String lgoin = resultSet.getString("login");//获取到字段title对应的值
+                String name = resultSet.getString("name");//获取到字段content对应的值
+                String passwd1 = resultSet.getString("passwd");//获取到字段author对应的值
+                //System.out.println(id+" "+title+" "+content+" "+author);
+                users.setId(uid);
+                users.setName(name);
+                users.setLogin(lgoin);
+                users.setPasswd(passwd1);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBUtil.close(connection,statement,resultSet);
+        }
+        return users;
+    }
 }
