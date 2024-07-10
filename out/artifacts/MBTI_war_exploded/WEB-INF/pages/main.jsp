@@ -12,5 +12,6 @@
 </head>
 <body>
 主页,${sessionScope.get("login")}
+<a href="users?opr=logout">退出登录</a>
 </body>
 </html>
