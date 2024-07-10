@@ -67,6 +67,7 @@ public class UserDaoImpl implements UserDao {
         try{
             connection=DBUtil.getConnection();
             String sql="SELECT * FROM users WHERE login=? AND passwd=?";
+
             statement=connection.prepareStatement(sql);
             statement.setString(1,login);
             statement.setString(2,passwd);
