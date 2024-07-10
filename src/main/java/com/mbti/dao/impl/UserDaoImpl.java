@@ -39,11 +39,13 @@ public class UserDaoImpl implements UserDao {
                 String lgoin = resultSet.getString("login");//获取到字段title对应的值
                 String name = resultSet.getString("name");//获取到字段content对应的值
                 String passwd = resultSet.getString("passwd");//获取到字段author对应的值
+                int type=resultSet.getInt("type");
                 //System.out.println(id+" "+title+" "+content+" "+author);
                 users.setId(uid);
                 users.setName(name);
                 users.setLogin(lgoin);
                 users.setPasswd(passwd);
+                users.setType(type);
             }
 
         } catch (Exception e) {
@@ -75,11 +77,13 @@ public class UserDaoImpl implements UserDao {
                 String lgoin = resultSet.getString("login");//获取到字段title对应的值
                 String name = resultSet.getString("name");//获取到字段content对应的值
                 String passwd1 = resultSet.getString("passwd");//获取到字段author对应的值
+                int type=resultSet.getInt("type");
                 //System.out.println(id+" "+title+" "+content+" "+author);
                 users.setId(uid);
                 users.setName(name);
                 users.setLogin(lgoin);
                 users.setPasswd(passwd1);
+                users.setType(type);
             }
         }catch (Exception e){
             e.printStackTrace();
