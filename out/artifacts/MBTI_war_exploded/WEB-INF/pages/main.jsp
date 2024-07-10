@@ -50,7 +50,7 @@
 				</dl>
 				<dl id="menu-article">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/dimension/list.action" href="javascript:void(0)"> <i class="icon-edit"></i> 性格维度管理<b></b>
+						<a _href="${pageContext.request.contextPath }/dimension?opr=list" href="javascript:void(0)"> <i class="icon-edit"></i> 性格维度管理<b></b>
 						</a>
 					</dt>
 				</dl>
