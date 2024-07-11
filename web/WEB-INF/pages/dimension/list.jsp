@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div style="padding: 10px;">
-		<form action="${pageContext.request.contextPath }/dimension/list.action" method="post">
+		<form action="${pageContext.request.contextPath }/dimension?opr=add" method="post">
 			<select class="form-control wid" name="id">
 				<c:forEach items="${assessmentList }" var="sj">
 					<option value="${sj.id }" ${sj.id eq param.id?'selected':''}>${sj.title
@@ -37,9 +37,9 @@
 					<td>${p.title }</td>
 					<td>${p.depict }</td>
 
-					<td><a class="button" href="${pageContext.request.contextPath }/dimension/view.action?id=${p.id }">查看</a>
-						<a class="button" href="${pageContext.request.contextPath }/dimension/edit.action?id=${p.id }">修改</a> <a
-						class="button" href="${pageContext.request.contextPath }/dimension/view.action?id=${p.id }&delete=1">删除</a>
+					<td><a class="button" href="${pageContext.request.contextPath }/dimension?opr=view&id=${p.id }">查看</a>
+						<a class="button" href="${pageContext.request.contextPath }/dimension?opr=edit&id=${p.id }">修改</a> <a
+						class="button" href="${pageContext.request.contextPath }/dimension?opr=delete&id=${p.id }&delete=1">删除</a>
 					</td>
 				</tr>
 			</c:forEach>
