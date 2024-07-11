@@ -72,9 +72,11 @@ public class DimensionDaoImpl implements DimensionDao {
                 int uid = resultSet.getInt("id");//获取到字段id对应的值
                 String title=resultSet.getString("title");
                 String depict=resultSet.getString("depict");
+                int assmentId=resultSet.getInt("assessment_id");
                 p.setId(uid);
                 p.setTitle(title);
                 p.setDepict(depict);
+                p.setAssessmentId(assmentId);
             }
 
         } catch (Exception e) {
@@ -84,5 +86,38 @@ public class DimensionDaoImpl implements DimensionDao {
             DBUtil.close(connection,statement,resultSet);
         }
         return p;
+    }
+
+    @Override
+    public int updatePdById(PersonalityDimension p) {
+        int count=0;
+        //进行数据库查询操作
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            //获取连接
+            connection= DBUtil.getConnection();
+
+            //4、获取Statement对象
+            String sql = "UPDATE personality_dimension SET title=?,depict=?,assessment_id=? WHERE id=?";
+
+            statement = connection.prepareStatement(sql);
+            statement.setString(1,p.getTitle());
+            statement.setString(2,p.getDepict());
+            statement.setInt(3,p.getAssessmentId());
+            statement.setInt(4,p.getId());
+
+            //5、执行更新操作
+
+            count = statement.executeUpdate();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            //7、关闭资源
+            DBUtil.close(connection,statement,resultSet);
+        }
+        return count;
     }
 }

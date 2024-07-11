@@ -19,4 +19,9 @@ public class DimensionServiceImpl implements DimensionService {
     public PersonalityDimension getPdById(int id) {
         return dimensionDao.getPdById(id);
     }
+
+    @Override
+    public int updatePdById(PersonalityDimension p) {
+        return dimensionDao.updatePdById(p);
+    }
 }

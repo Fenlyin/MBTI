@@ -4,6 +4,8 @@
 <html>
 <head>
 <script type="text/javascript" src="${pageContext.request.contextPath }/css/commonCss.js"></script>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/table.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/res/styles.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/input.css" />
@@ -13,7 +15,7 @@
   <div style="padding: 10px;">
     <a href="${pageContext.request.contextPath }/dimension/list.action?id=${dimension.assessmentId }" class="button"><button class="btn btn-warning" style="margin-bottom: 10px">返回列表</button></a>
     <%@ include file="/inc/msg.jsp"%>
-    <form action="${pageContext.request.contextPath }/dimension/update.action" method="post" class="table" style="width: 80%;">
+    <form action="${pageContext.request.contextPath }/dimension?opr=update" method="post" class="table" style="width: 80%;">
       <input type="hidden" name="assessmentId" value="${dimension.assessmentId}" />
       <input type="hidden" name="id" value="${dimension.id}" />
       <table class="table table-bordered table-hover table-striped">
