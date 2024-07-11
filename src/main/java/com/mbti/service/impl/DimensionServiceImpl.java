@@ -24,4 +24,9 @@ public class DimensionServiceImpl implements DimensionService {
     public int updatePdById(PersonalityDimension p) {
         return dimensionDao.updatePdById(p);
     }
+
+    @Override
+    public int deletePdById(int id) {
+        return dimensionDao.deletePdById(id);
+    }
 }

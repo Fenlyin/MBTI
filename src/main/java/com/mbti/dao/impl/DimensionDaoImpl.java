@@ -120,4 +120,35 @@ public class DimensionDaoImpl implements DimensionDao {
         }
         return count;
     }
+
+    @Override
+    public int deletePdById(int id) {
+        int count=0;
+        //进行数据库查询操作
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            //获取连接
+            connection= DBUtil.getConnection();
+
+            //4、获取Statement对象
+            String sql = "DELETE FROM personality_dimension WHERE id=?";
+
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1,id);
+
+
+            //5、执行更新操作
+
+            count = statement.executeUpdate();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            //7、关闭资源
+            DBUtil.close(connection,statement,resultSet);
+        }
+        return count;
+    }
 }

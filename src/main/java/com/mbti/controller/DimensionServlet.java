@@ -74,6 +74,17 @@ public class DimensionServlet extends HttpServlet {
             if(count>0){
                 resp.sendRedirect("dimension?opr=list");
             }
+        } else if ("delete".equals(opr)) {//删除性格维度
+            //获取性格维度id
+            int id=Integer.valueOf(req.getParameter("id"));
+
+            //调用业务逻辑层根据id删除性格维度对象的方法
+            int count=dimensionService.deletePdById(id);
+
+            //如果删除成功，展示成功后的列表
+            if(count>0){
+                resp.sendRedirect("dimension?opr=list");
+            }
         }
     }
 

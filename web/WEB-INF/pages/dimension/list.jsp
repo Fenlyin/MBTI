@@ -39,7 +39,7 @@
 
 					<td><a class="button" href="${pageContext.request.contextPath }/dimension?opr=view&id=${p.id }">查看</a>
 						<a class="button" href="${pageContext.request.contextPath }/dimension?opr=edit&id=${p.id }">修改</a> <a
-						class="button" href="${pageContext.request.contextPath }/dimension/view.action?id=${p.id }&delete=1">删除</a>
+						class="button" href="${pageContext.request.contextPath }/dimension?opr=delete&id=${p.id }&delete=1">删除</a>
 					</td>
 				</tr>
 			</c:forEach>
