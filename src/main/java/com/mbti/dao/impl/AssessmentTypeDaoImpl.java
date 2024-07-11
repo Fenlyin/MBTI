@@ -43,4 +43,35 @@ public class AssessmentTypeDaoImpl implements AssessmentTypeDao {
         }
         return assessmentTypeList;
     }
+
+    @Override
+    public AssessmentType getAssessmentTypeById(int id) {
+        //查询数据库
+        AssessmentType assessmentType=null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try{
+            connection= DBUtil.getConnection();
+            String sql="SELECT * FROM assessments where id=?;";
+            statement=connection.prepareStatement(sql);
+            statement.setInt(1,id);
+
+            resultSet=statement.executeQuery();
+            if (resultSet.next()) {
+                assessmentType=new AssessmentType();
+                int uid = resultSet.getInt("id");//获取到字段id对应的值
+                String title=resultSet.getString("title");
+                double cost=resultSet.getDouble("cost");
+                assessmentType.setId(uid);
+                assessmentType.setTitle(title);
+                assessmentType.setCost(cost);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBUtil.close(connection,statement,resultSet);
+        }
+        return assessmentType;
+    }
 }

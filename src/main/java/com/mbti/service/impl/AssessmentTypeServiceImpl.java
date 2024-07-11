@@ -14,4 +14,9 @@ public class AssessmentTypeServiceImpl implements AssessmentTypeService {
         //调用数据访问层
         return assessmentTypeDao.getAssessmentTypeList();
     }
+
+    @Override
+    public AssessmentType getAssessmentTypeById(int id) {
+        return assessmentTypeDao.getAssessmentTypeById(id);
+    }
 }

@@ -85,6 +85,34 @@ public class DimensionServlet extends HttpServlet {
             if(count>0){
                 resp.sendRedirect("dimension?opr=list");
             }
+        }else if ("add".equals(opr)){//打开添加性格维度页面
+            //根据考核类型id获取考核类型
+            int id=Integer.valueOf(req.getParameter("id"));
+            //调用serveice根据id查询考核类型的方法
+            AssessmentType assessmentType=assessmentTypeService.getAssessmentTypeById(id);
+            //保存在request对象中
+            req.setAttribute("assessment",assessmentType);
+            //打开添加性格维度的页面create.jsp
+            req.getRequestDispatcher("WEB-INF/pages/dimension/create.jsp").forward(req,resp);
+        } else if ("save".equals(opr)) {//执行添加操作
+            //获取页面传递的参数：考核类型id,性格维度的名称，性格维度说明
+            int assessmentId=Integer.valueOf(req.getParameter("assessmentId"));
+            String title=req.getParameter("title");
+            String depict=req.getParameter("depict");
+
+            //封装性格维度对象中
+            PersonalityDimension p=new PersonalityDimension();
+            p.setTitle(title);
+            p.setDepict(depict);
+            p.setAssessmentId(assessmentId);
+
+            //调用service添加的方法
+            int count=dimensionService.addPd(p);
+
+            //如果添加成功，展示成功后的列表
+            if(count>0){
+                resp.sendRedirect("dimension?opr=list");
+            }
         }
     }
 

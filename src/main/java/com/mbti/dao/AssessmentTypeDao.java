@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface AssessmentTypeDao {
     List<AssessmentType> getAssessmentTypeList();
+    AssessmentType getAssessmentTypeById(int id);
 }

@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div style="padding: 10px;">
-		<form action="${pageContext.request.contextPath }/dimension/list.action" method="post">
+		<form action="${pageContext.request.contextPath }/dimension?opr=add" method="post">
 			<select class="form-control wid" name="id">
 				<c:forEach items="${assessmentList }" var="sj">
 					<option value="${sj.id }" ${sj.id eq param.id?'selected':''}>${sj.title

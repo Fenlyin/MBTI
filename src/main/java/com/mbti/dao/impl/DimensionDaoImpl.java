@@ -151,4 +151,36 @@ public class DimensionDaoImpl implements DimensionDao {
         }
         return count;
     }
+
+    @Override
+    public int addPd(PersonalityDimension p) {
+        int count=0;
+        //进行数据库查询操作
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            //获取连接
+            connection= DBUtil.getConnection();
+
+            //4、获取Statement对象
+            String sql = "INSERT INTO personality_dimension(title,depict,assessment_id) VALUES(?,?,?);";
+
+            statement = connection.prepareStatement(sql);
+            statement.setString(1,p.getTitle());
+            statement.setString(2,p.getDepict());
+            statement.setInt(3,p.getAssessmentId());
+
+            //5、执行更新操作
+
+            count = statement.executeUpdate();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            //7、关闭资源
+            DBUtil.close(connection,statement,resultSet);
+        }
+        return count;
+    }
 }

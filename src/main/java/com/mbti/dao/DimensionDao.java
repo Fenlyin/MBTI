@@ -13,4 +13,6 @@ public interface DimensionDao {
 
     //根据id删除性格维度
     int deletePdById(int id);
+    //添加性格维度
+    int addPd(PersonalityDimension p);
 }
