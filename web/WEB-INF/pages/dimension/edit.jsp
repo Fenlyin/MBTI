@@ -13,7 +13,7 @@
 </head>
 <body>
   <div style="padding: 10px;">
-    <a href="${pageContext.request.contextPath }/dimension/list.action?id=${dimension.assessmentId }" class="button"><button class="btn btn-warning" style="margin-bottom: 10px">返回列表</button></a>
+    <a href="${pageContext.request.contextPath }/dimension/list.action?id=${dimension.assessmentId }" class="button"><button class="btn btn-primary" style="margin-bottom: 10px">返回列表</button></a>
     <%@ include file="/inc/msg.jsp"%>
     <form action="${pageContext.request.contextPath }/dimension?opr=update" method="post" class="table" style="width: 80%;">
       <input type="hidden" name="assessmentId" value="${dimension.assessmentId}" />
@@ -33,9 +33,9 @@
         </tr>
         <tr>
           <td colspan="2" class="edit">
-            <input class="btn btn-warning" type="submit" value="保存" />
+            <input class="btn btn-primary" type="submit" value="保存" />
           
-            <input class="btn btn-warning" type="reset" value="重置" />
+            <input class="btn btn-primary" type="reset" value="重置" />
           </td>
         </tr>
       </table>

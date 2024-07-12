@@ -38,13 +38,13 @@
 			<c:if test="${current_user.type!=4 }">
 				<dl id="menu-user">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/user/list.action" href="javascript:;"> <i class="icon-user"></i> 用户管理<b></b>
+						<a _href="${pageContext.request.contextPath }/user" href="javascript:void(0);"> <i class="icon-user"></i> 用户管理<b></b>
 						</a>
 					</dt>
 				</dl>
 				<dl id="menu-comments">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/assessment/list.action" href="javascript:;"> <i class="icon-comments"></i> 考核类型管理<b></b>
+						<a _href="${pageContext.request.contextPath }/assessment" href="javascript:void(0);"> <i class="icon-comments"></i> 考核类型管理<b></b>
 						</a>
 					</dt>
 				</dl>
@@ -56,26 +56,26 @@
 				</dl>
 				<dl id="menu-picture">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/question/list.action" href="javascript:void(0)"> <i class="icon-picture"></i>
+						<a _href="${pageContext.request.contextPath }/question" href="javascript:void(0)"> <i class="icon-picture"></i>
 							题目管理<b></b>
 						</a>
 					</dt>
 				</dl>
 				<dl id="menu-product">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/team/list.action" href="javascript:void(0)"> <i class="icon-beaker"></i> 批次管理<b></b>
+						<a _href="${pageContext.request.contextPath }/team" href="javascript:void(0)"> <i class="icon-beaker"></i> 批次管理<b></b>
 						</a>
 					</dt>
 				</dl>
 				<dl id="menu-product">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/testPersonnel/list.action" href="javascript:void(0)"> <i class="icon-beaker"></i> 参测人员管理<b></b>
+						<a _href="${pageContext.request.contextPath }/testPersonal" href="javascript:void(0)"> <i class="icon-beaker"></i> 参测人员管理<b></b>
 						</a>
 					</dt>
 				</dl>
 				<dl id="menu-product">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/schedule/list.action" href="javascript:void(0)"> <i class="icon-beaker"></i>
+						<a _href="${pageContext.request.contextPath }/schedule" href="javascript:void(0)"> <i class="icon-beaker"></i>
 							测试安排<b></b>
 						</a>
 					</dt>
@@ -84,14 +84,14 @@
 				<c:if test="${current_user.type==4 }">
 				<dl id="menu-product">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/exam/list.action" href="javascript:void(0)"> <i class="icon-beaker"></i> 我的测试<b></b>
+						<a _href="${pageContext.request.contextPath }/exam" href="javascript:void(0)"> <i class="icon-beaker"></i> 我的测试<b></b>
 						</a>
 					</dt>
 				</dl>
 				</c:if>
 				<dl id="menu-admin">
 					<dt>
-						<a _href="${pageContext.request.contextPath }/password.action" href="javascript:void(0)"> <i class="icon-key"></i> 更改密码<b></b>
+						<a _href="${pageContext.request.contextPath }/password" href="javascript:void(0)"> <i class="icon-key"></i> 更改密码<b></b>
 						</a>
 					</dt>
 				</dl>

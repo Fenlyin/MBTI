@@ -843,18 +843,18 @@ a.btn-default:hover{color:#333}
 .btn-danger:active,.btn-danger.active{color:#fff;background-color:#942a25 \9}
 
 /*危险*/
-.btn-out{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#f08220;
+.btn-out{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#21d5ed;
 	background-image:-moz-linear-gradient(top,#f39b4d,#f08220);
 	background-image:-webkit-gradient(linear,0 0,0 100%,from(#f39b4d),to(#f08220));
 	background-image:-webkit-linear-gradient(top,#f39b4d,#f08220);
 	background-image:-o-linear-gradient(top,#f39b4d,#f08220);
-	background-image:linear-gradient(to bottom,#f39b4d,#f08220);
+	background-image:linear-gradient(to bottom,#21d5ed,#4fddff);
 	background-repeat:repeat-x;border-color:#f08220 #f08220 #804220;
 	border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff39b4d',endColorstr='#fff08220',GradientType=0);
 	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false)
 }
-.btn-out:hover,.btn-danger:focus,.btn-out.disabled,.btn-danger[disabled]{color:#fff;background-color:#f08220;*background-color:#a2530d}
+.btn-out:hover,.btn-danger:focus,.btn-out.disabled,.btn-danger[disabled]{color:#fff;}
 .btn-out:active,.btn-danger.active{color:#fff;background-color:#942a25 \9}
 /*相反*/
 .btn-inverse{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#222;

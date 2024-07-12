@@ -16,7 +16,7 @@ a{color:#333}a:hover,a:focus,.maincolor,.maincolor a{color:#06c}
 .Hui-nav li a{}/*头部导航文字颜色*/
 .Hui-nav li a:hover{}
 .Hui-nav li.current a,.Hui-nav li.current a:hover{  background-color:#111}/*导航高亮状态*/
-.Hui-aside{background:#EDA921 url("../images/patternbg.png") repeat scroll 0 0;border-right: 1px solid #32415a}左侧菜单
+.Hui-aside{background:#21d5ed url("../images/patternbg.png") repeat scroll 0 0;border-right: 1px solid #32415a}左侧菜单
 .menu_dropdown dl dt{border-bottom: 1px solid #32415a}/*左侧二级导航菜单*/
 .menu_dropdown dl dt a{}
 .menu_dropdown li a{border-bottom: 1px solid #32415a}
@@ -75,9 +75,9 @@ body{min-height:100%;position: relative}
 /*主要操作区*/
 .Hui-article{position: absolute; z-index:2;top:0;right:0;bottom:0;left:200px}
 /*选项卡导航*/
-.Hui-tabNav{height: 31px; padding-right:75px;background: #FFE0A1  repeat-x 0 bottom;overflow:hidden; position:relative;padding-top:7px}/* 此样式用于修改导航栏 */
+.Hui-tabNav{height: 31px; padding-right:75px;background: #21d5ed  repeat-x 0 bottom;overflow:hidden; position:relative;padding-top:7px}/* 此样式用于修改导航栏 */
 .Hui-tabNav-wp{ position:relative; height:40px;overflow:hidden;}
-.Hui-tabNav .acrossTab{background:#FFE0A1; baposition:absolute; top:10px; left:0px}
+.Hui-tabNav .acrossTab{background:#21d5ed; baposition:absolute; top:10px; left:0px}
 .loading {background:url(../images/loading_072.gif) no-repeat center; height:100px}
 .show_iframe iframe {position: absolute;bottom: 0;height: 100%;width: 100%}
 .Hui-tabNav-more {position: absolute;right:0px;width:70px;top:8px;display: none;}

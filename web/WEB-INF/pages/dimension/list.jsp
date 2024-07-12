@@ -19,8 +19,8 @@
 						}</option>
 				</c:forEach>
 			</select>
-			 <input class="btn btn-warning" style="margin-left: 10px;margin-bottom: 3px" type="submit" name="list" value="查看性格维度" />
-			 <input class="btn btn-warning" style="margin-left: 10px;margin-bottom: 3px" type="submit" name="create" value="添加性格维度" />
+			 <input class="btn btn-primary" style="margin-left: 10px;margin-bottom: 3px" type="submit" name="list" value="查看性格维度" />
+			 <input class="btn btn-primary" style="margin-left: 10px;margin-bottom: 3px" type="submit" name="create" value="添加性格维度" />
 		</form>
 
 		<%@ include file="/inc/msg.jsp"%>
